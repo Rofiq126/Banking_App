@@ -1,4 +1,5 @@
 import 'package:bangking_app/view/auth/register_screen.dart';
+import 'package:bangking_app/view/home/home_screen.dart';
 import 'package:bangking_app/widgets/custom_button.dart';
 import 'package:bangking_app/widgets/custom_textField.dart';
 import 'package:bangking_app/widgets/styles.dart';
@@ -73,7 +74,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 16,
                   ),
                   CustomButton(
-                    navigator: () {},
+                    navigator: () {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (_) => HomeScreen()));
+                    },
                     buttonName: 'Login',
                     textStyle: Styles.txtRegulerWhite,
                     buttonColor: Styles.primaryColor,
