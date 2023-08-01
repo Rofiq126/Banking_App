@@ -13,14 +13,21 @@ abstract class Styles {
 
   static const TextStyle txtTitle =
       TextStyle(fontFamily: 'Poppins', color: Colors.white, fontSize: 30);
+
   static const TextStyle txtTitleSecondry =
-      TextStyle(fontFamily: 'Poppins', color: Colors.black87, fontSize: 14);
+      TextStyle(fontFamily: 'Poppins', color: Colors.white, fontSize: 14);
+
+  static const TextStyle txtTitleThird =
+      TextStyle(fontFamily: 'Poppins', color: Colors.white, fontSize: 16);
 
   static const TextStyle txtRegulerBlack =
       TextStyle(fontFamily: 'Poppins', color: Colors.black87, fontSize: 12);
 
   static const TextStyle txtRegulerWhite =
       TextStyle(fontFamily: 'Poppins', color: Colors.white, fontSize: 12);
+
+  static const TextStyle txtRegulerBlue = TextStyle(
+      fontFamily: 'Poppins', color: Styles.primaryColor, fontSize: 12);
 
   static const TextStyle txtRegulerActive = TextStyle(
       fontFamily: 'Poppins',
