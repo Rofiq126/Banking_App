@@ -18,16 +18,27 @@ abstract class Styles {
       TextStyle(fontFamily: 'Poppins', color: Colors.white, fontSize: 14);
 
   static const TextStyle txtTitleThird =
-      TextStyle(fontFamily: 'Poppins', color: Colors.white, fontSize: 16);
+      TextStyle(fontFamily: 'Poppins', color: Colors.white, fontSize: 17);
 
   static const TextStyle txtRegulerBlack =
       TextStyle(fontFamily: 'Poppins', color: Colors.black87, fontSize: 12);
+  static const TextStyle txtRegulerBlackSmall =
+      TextStyle(fontFamily: 'Poppins', color: Colors.black87, fontSize: 10);
 
   static const TextStyle txtRegulerWhite =
       TextStyle(fontFamily: 'Poppins', color: Colors.white, fontSize: 12);
 
   static const TextStyle txtRegulerBlue = TextStyle(
       fontFamily: 'Poppins', color: Styles.primaryColor, fontSize: 12);
+
+  static const TextStyle txtRegulerBlueBig = TextStyle(
+      fontFamily: 'Poppins', color: Styles.primaryColor, fontSize: 20);
+
+  static const TextStyle txtRegulerBlueSecond = TextStyle(
+      fontFamily: 'Poppins',
+      color: Colors.blue,
+      fontSize: 14,
+      fontWeight: FontWeight.w200);
 
   static const TextStyle txtRegulerActive = TextStyle(
       fontFamily: 'Poppins',
