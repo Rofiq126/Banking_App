@@ -1,5 +1,5 @@
 import 'package:bangking_app/view/auth/login_screen.dart';
-import 'package:bangking_app/view/home/account_screen.dart';
+import 'package:bangking_app/view/account/account_screen.dart';
 import 'package:bangking_app/widgets/styles.dart';
 import 'package:flutter/material.dart';
 
