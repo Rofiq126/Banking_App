@@ -1,7 +1,9 @@
+import 'package:bangking_app/view_model/bank_viewModel.dart';
 import 'package:bangking_app/widgets/custom_button.dart';
 import 'package:bangking_app/widgets/drawer.dart';
 import 'package:bangking_app/widgets/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -16,10 +18,20 @@ class _HomeScreenState extends State<HomeScreen> {
   String imageProfileEmpty =
       'https://i.pinimg.com/564x/29/b8/d2/29b8d250380266eb04be05fe21ef19a7.jpg';
   int selectedIndex = 0;
-  void selected() {}
+
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      Provider.of<BankViewModel>(context, listen: false)
+          .getHistoryTransaction();
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    var viewModel = Provider.of<BankViewModel>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -115,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ListView.builder(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
-                        itemCount: 10,
+                        itemCount: viewModel.historyTransaction.length,
                         itemBuilder: (BuildContext context, index) {
                           return ListTile(
                             leading: Container(
@@ -123,18 +135,21 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: 40,
                               decoration: BoxDecoration(
                                   color: Styles.primaryColor,
+                                  image: DecorationImage(
+                                      image: NetworkImage(viewModel
+                                          .historyTransaction[index].profile)),
                                   borderRadius: BorderRadius.circular(100)),
                             ),
-                            title: const Text(
-                              'Lorem Opsium Compamy',
+                            title: Text(
+                              viewModel.historyTransaction[index].name,
                               style: Styles.txtRegulerBlack,
                             ),
-                            subtitle: const Text(
-                              'Received Payment',
+                            subtitle: Text(
+                              viewModel.historyTransaction[index].type,
                               style: Styles.txtRegulerBlackSmall,
                             ),
-                            trailing: const Text(
-                              '- 2,030.80',
+                            trailing: Text(
+                              '- ${viewModel.historyTransaction[index].amount}',
                               style: Styles.txtRegulerBlack,
                             ),
                           );
