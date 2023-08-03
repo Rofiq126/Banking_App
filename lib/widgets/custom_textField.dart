@@ -5,6 +5,7 @@ class CustomTextField extends StatefulWidget {
   final TextEditingController textEditingController;
   final String hintText;
   final bool obsecure;
+
   final String label;
   const CustomTextField(
       {Key? key,
@@ -24,7 +25,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return TextFormField(
         controller: widget.textEditingController,
         obscureText: widget.obsecure,
-        textAlign: TextAlign.center,
+        textAlign: TextAlign.start,
         style: Styles.txtRegulerBlack,
         decoration: InputDecoration(
           label: Text(widget.label),

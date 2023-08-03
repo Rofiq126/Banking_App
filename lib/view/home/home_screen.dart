@@ -12,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   String imageProfile =
-      'https://i.pinimg.com/564x/f4/b8/08/f4b808ad2e26166582ec51c7be71ae24.jpg';
+      'https://i.pinimg.com/564x/29/b8/d2/29b8d250380266eb04be05fe21ef19a7.jpg';
   String imageProfileEmpty =
       'https://i.pinimg.com/564x/29/b8/d2/29b8d250380266eb04be05fe21ef19a7.jpg';
   int selectedIndex = 0;
@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: Styles.primaryColor,
       ),
       drawer: CustomDrawer(),
@@ -103,42 +103,43 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Container(
                 width: size.width,
                 decoration: const BoxDecoration(color: Colors.white),
-                child: SafeArea(
-                  child: Column(
-                    children: [
-                      const Text(
-                        'LATER TRANSACTION',
-                        style: Styles.txtRegulerBlueSecond,
-                      ),
-                      ListView.builder(
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          itemCount: 10,
-                          itemBuilder: (BuildContext context, index) {
-                            return ListTile(
-                              leading: Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                    color: Styles.primaryColor,
-                                    borderRadius: BorderRadius.circular(100)),
-                              ),
-                              title: const Text(
-                                'Lorem Opsium Compamy',
-                                style: Styles.txtRegulerBlack,
-                              ),
-                              subtitle: const Text(
-                                'Received Payment',
-                                style: Styles.txtRegulerBlackSmall,
-                              ),
-                              trailing: const Text(
-                                '- 2,030.80',
-                                style: Styles.txtRegulerBlack,
-                              ),
-                            );
-                          })
-                    ],
-                  ),
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    const Text(
+                      'LATER TRANSACTION',
+                      style: Styles.txtRegulerBlueSecond,
+                    ),
+                    ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: 10,
+                        itemBuilder: (BuildContext context, index) {
+                          return ListTile(
+                            leading: Container(
+                              width: 40,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                  color: Styles.primaryColor,
+                                  borderRadius: BorderRadius.circular(100)),
+                            ),
+                            title: const Text(
+                              'Lorem Opsium Compamy',
+                              style: Styles.txtRegulerBlack,
+                            ),
+                            subtitle: const Text(
+                              'Received Payment',
+                              style: Styles.txtRegulerBlackSmall,
+                            ),
+                            trailing: const Text(
+                              '- 2,030.80',
+                              style: Styles.txtRegulerBlack,
+                            ),
+                          );
+                        })
+                  ],
                 ),
               ),
             ),

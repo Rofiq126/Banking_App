@@ -1,4 +1,5 @@
 import 'package:bangking_app/view/auth/login_screen.dart';
+import 'package:bangking_app/view/home/account_screen.dart';
 import 'package:bangking_app/widgets/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -48,7 +49,10 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 'Account',
                 style: Styles.txtRegulerBlack,
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => AccountScreen()));
+              },
             ),
             ListTile(
               selected: selectedIndex == 2,
