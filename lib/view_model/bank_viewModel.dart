@@ -8,16 +8,16 @@ class BankViewModel with ChangeNotifier {
   List<HistoryTransaction> historyTransaction = [];
 
   Future getHistoryTransaction() async {
-    int? index;
-    final response = await BankAPI().getHistory();
-
-    for (int i = 0; i < response.data.length; i++) {
-      index = i;
+    try {
+      final response = await BankAPI().getHistory();
+      List jsonResponse = response.data;
+      historyTransaction = jsonResponse
+          .map((data) => HistoryTransaction.fromJson(data))
+          .toList();
+      notifyListeners();
+    } catch (e) {
+      debugPrint(e.toString());
     }
-    List jsonResponse = response.data;
-    historyTransaction =
-        jsonResponse.map((data) => HistoryTransaction.fromJson(data)).toList();
-    notifyListeners();
     // HistoryTransaction reponseData =
     //     HistoryTransaction.fromJson(response.data[index]).toList();
   }
