@@ -1,3 +1,4 @@
+import 'package:bangking_app/view/add_card/add_card.dart';
 import 'package:bangking_app/view/auth/login_screen.dart';
 import 'package:bangking_app/view/account/account_screen.dart';
 import 'package:bangking_app/widgets/styles.dart';
@@ -64,7 +65,10 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 'Add Card',
                 style: Styles.txtRegulerBlack,
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => AddCardScreen()));
+              },
             ),
             ListTile(
               selected: selectedIndex == 3,
