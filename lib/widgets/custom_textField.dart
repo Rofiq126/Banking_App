@@ -22,30 +22,32 @@ class CustomTextField extends StatefulWidget {
 class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-        controller: widget.textEditingController,
-        obscureText: widget.obsecure,
-        textAlign: TextAlign.start,
-        style: Styles.txtRegulerBlack,
-        decoration: InputDecoration(
-          label: Text(widget.label),
-          labelStyle: const TextStyle(fontSize: 12, fontFamily: 'Poppins'),
-          fillColor: Colors.white,
-          filled: true,
-          contentPadding:
-              const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          border: const OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(8.0)),
-              borderSide: BorderSide(color: Styles.blackColor, width: 2.0)),
-          enabledBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(8.0),
+    return Flexible(
+      child: TextFormField(
+          controller: widget.textEditingController,
+          obscureText: widget.obsecure,
+          textAlign: TextAlign.start,
+          style: Styles.txtRegulerBlack,
+          decoration: InputDecoration(
+            label: Text(widget.label),
+            labelStyle: const TextStyle(fontSize: 12, fontFamily: 'Poppins'),
+            fillColor: Colors.white,
+            filled: true,
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            border: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                borderSide: BorderSide(color: Styles.blackColor, width: 2.0)),
+            enabledBorder: const OutlineInputBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(8.0),
+              ),
+              borderSide: BorderSide(
+                color: Styles.blackColor,
+                width: 2.0,
+              ),
             ),
-            borderSide: BorderSide(
-              color: Styles.blackColor,
-              width: 2.0,
-            ),
-          ),
-        ));
+          )),
+    );
   }
 }
