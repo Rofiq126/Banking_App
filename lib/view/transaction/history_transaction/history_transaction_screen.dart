@@ -1,7 +1,5 @@
 import 'package:bangking_app/view/transaction/component/appBar_history_transaction.dart';
 import 'package:bangking_app/view/transaction/history_transaction/complete_transaction_screen.dart';
-import 'package:bangking_app/widgets/custom_appBar.dart';
-import 'package:bangking_app/widgets/styles.dart';
 import 'package:flutter/material.dart';
 
 class HistoryTransactionScreen extends StatefulWidget {

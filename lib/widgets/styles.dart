@@ -27,6 +27,8 @@ abstract class Styles {
 
   static const TextStyle txtRegulerWhite =
       TextStyle(fontFamily: 'Poppins', color: Colors.white, fontSize: 12);
+  static const TextStyle txtRegulerWhiteBig =
+      TextStyle(fontFamily: 'Poppins', color: Colors.white, fontSize: 20);
 
   static const TextStyle txtRegulerBlue = TextStyle(
       fontFamily: 'Poppins', color: Styles.primaryColor, fontSize: 12);

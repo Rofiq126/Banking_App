@@ -1,6 +1,7 @@
 import 'package:bangking_app/view/add_card/add_card_screen.dart';
 import 'package:bangking_app/view/auth/login_screen.dart';
 import 'package:bangking_app/view/account/account_screen.dart';
+import 'package:bangking_app/view/payment/payment_screen.dart';
 import 'package:bangking_app/view/transaction/add_transaction_screen.dart';
 import 'package:bangking_app/view/transaction/history_transaction/history_transaction_screen.dart';
 import 'package:bangking_app/widgets/styles.dart';
@@ -114,7 +115,10 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 'Payment',
                 style: Styles.txtRegulerBlack,
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => PaymentScreen()));
+              },
             ),
             ListTile(
               selected: selectedIndex == 6,
