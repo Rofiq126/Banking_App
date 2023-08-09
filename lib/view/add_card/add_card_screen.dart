@@ -1,4 +1,4 @@
-import 'package:bangking_app/model/list_date.dart';
+import 'package:bangking_app/model/list_data.dart';
 import 'package:bangking_app/widgets/custom_appBar.dart';
 import 'package:bangking_app/widgets/custom_button.dart';
 import 'package:bangking_app/widgets/custom_dropDown.dart';
@@ -18,7 +18,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
   TextEditingController cardNumber = TextEditingController();
   TextEditingController password = TextEditingController();
   TextEditingController phone = TextEditingController();
-  Tanggal tanggal = Tanggal();
+  ListData tanggal = ListData();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

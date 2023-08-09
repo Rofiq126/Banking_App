@@ -1,6 +1,8 @@
-import 'package:bangking_app/view/add_card/add_card.dart';
+import 'package:bangking_app/view/add_card/add_card_screen.dart';
 import 'package:bangking_app/view/auth/login_screen.dart';
 import 'package:bangking_app/view/account/account_screen.dart';
+import 'package:bangking_app/view/transaction/add_transaction_screen.dart';
+import 'package:bangking_app/view/transaction/history_transaction/history_transaction_screen.dart';
 import 'package:bangking_app/widgets/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -73,17 +75,37 @@ class _CustomDrawerState extends State<CustomDrawer> {
             ListTile(
               selected: selectedIndex == 3,
               leading: const Icon(
-                Icons.money,
+                Icons.trolley,
                 color: Styles.primaryColor,
               ),
               title: const Text(
-                'Transaction',
+                'Add Transaction',
                 style: Styles.txtRegulerBlack,
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => AddTransactionScreen()));
+              },
             ),
             ListTile(
               selected: selectedIndex == 4,
+              leading: const Icon(
+                Icons.history,
+                color: Styles.primaryColor,
+              ),
+              title: const Text(
+                'History Transaction',
+                style: Styles.txtRegulerBlack,
+              ),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => HistoryTransactionScreen()));
+              },
+            ),
+            ListTile(
+              selected: selectedIndex == 5,
               leading: const Icon(
                 Icons.payments_outlined,
                 color: Styles.primaryColor,
@@ -95,7 +117,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               onTap: () {},
             ),
             ListTile(
-              selected: selectedIndex == 5,
+              selected: selectedIndex == 6,
               leading: const Icon(
                 Icons.currency_exchange,
                 color: Styles.primaryColor,
@@ -107,7 +129,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               onTap: () {},
             ),
             ListTile(
-              selected: selectedIndex == 6,
+              selected: selectedIndex == 7,
               leading: const Icon(
                 Icons.exit_to_app,
                 color: Styles.primaryColor,

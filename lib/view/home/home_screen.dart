@@ -20,15 +20,6 @@ class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
 
   @override
-  void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      Provider.of<BankViewModel>(context, listen: false)
-          .getHistoryTransaction();
-    });
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     var viewModel = Provider.of<BankViewModel>(context, listen: false);

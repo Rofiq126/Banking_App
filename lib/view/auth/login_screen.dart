@@ -4,6 +4,8 @@ import 'package:bangking_app/widgets/custom_button.dart';
 import 'package:bangking_app/widgets/custom_textField.dart';
 import 'package:bangking_app/widgets/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../view_model/bank_viewModel.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -16,6 +18,14 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController email = TextEditingController();
 
   final TextEditingController password = TextEditingController();
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      Provider.of<BankViewModel>(context, listen: false)
+          .getHistoryTransaction();
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

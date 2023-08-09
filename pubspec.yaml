@@ -65,6 +65,7 @@ flutter:
     - assets\icon\icon_bank.png
     - assets\icon\icon_register.png
     - assets\icon\icon_card.png
+    - assets\icon\transaction_icon.png
    
 
   # An image asset can refer to one or more resolution-specific "variants", see

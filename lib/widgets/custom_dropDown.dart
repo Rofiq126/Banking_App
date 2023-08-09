@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class CustomDropDown extends StatefulWidget {
   List listFirst;
-  String hint;
+  final String hint;
   CustomDropDown({Key? key, required this.listFirst, required this.hint})
       : super(key: key);
 
